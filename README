@@ -1,0 +1,35 @@
+README for WMO IPET-OWR WRDE maps
+
+Daniel Michelson
+Environment and Climate Change Canada
+
+2017-03-11
+
+This project contains scripts for generating maps showing which countries 
+exchange weather-radar data. The way this is done is by shading such countries 
+light green and labeling them.
+
+The country labels are ISO 3166-1 alpha-2 ccTLD strings, which are two 
+characters long. These are most popularly known as Internet top-level domain 
+names. These labels have been read from the "Countries of the World" database, 
+available as an ASCII file from OpenGeoCode.Org.
+
+The phys_geo database provides centroid coordinates for each country. In some 
+cases these coordinates have had to be modified manually to make sense in this 
+application context. Phys_geo organizes country information by three-letter 
+country code, which requires a mapping to ISO 3166-1 alpha-3. Some countries 
+that exist in COW do not exist in phys_geo.
+
+Country polygons are administrative level 0 as made available in the GADM 
+collection. GADM shape files have been downloaded, and the adm0 files have been 
+extracted and used in this project. If these shape files are made available in 
+this project, it is by permission according to the GADM license.
+
+One or more Regional Association maps are generated from a Python script each.
+
+No installation is required; the scripts should run out of the box unless the 
+GADM data have to be accessed separately and downloaded into a directory called 
+gadm0.
+
+Dependencies
+A stock Python scientific stack with matplotlib and basemap.
